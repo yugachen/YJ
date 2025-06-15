@@ -51,6 +51,16 @@
       overflow: hidden;
       animation: typing 4s steps(40, end), blink .75s step-end infinite;
     }
+     #message2 {
+      font-size: 1.5rem;
+      margin: 40px auto;
+      width: 80%;
+      color: #7a5c3c;
+      border-right: .15em solid #7a5c3c;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink .75s step-end infinite;
+    }
     @keyframes typing {
       from { width: 0 }
       to { width: 80% }
@@ -134,7 +144,7 @@
   <h1>宜潔 Happy Birthday!</h1>
   <div id="message">宜潔從大一到現在真的非常感謝你在課業上的幫助，然後很抱歉一直只記得你是6月生日，</div>
   <p>
-  <div>還是問了林釔岑才知道已經過了(哭)，只能用這種方式作小小的補償啦</div>
+  <div id="message2">還是問了林釔岑才知道已經過了(哭)，只能用這種方式作小小的補償啦</div>
 
   <div class="cake" id="cake">
     <div class="candle" style="left: 30px;"><div class="flame"></div></div>
@@ -143,8 +153,7 @@
   </div>
 
   <div id="wish">🎉 生日快樂 祝大四入班順利 🎉</div>
-  <div style="text-align: center;">
-  <img src="HBD.png" width="300" height="200" id="photo" alt="生日照片">
+  <img src="HBD.png" width="300" height="200" align="center" id="photo" alt="生日照片">
   </div>
     
   <script>
