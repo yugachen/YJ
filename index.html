@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday</title>
   <style>
     body {
@@ -51,7 +51,7 @@
       overflow: hidden;
       animation: typing 4s steps(40, end), blink .75s step-end infinite;
     }
-     #message2 {
+    #message2 {
       display: none;
       font-size: 1.5rem;
       margin: 40px auto;
@@ -60,11 +60,11 @@
       border-right: .15em solid #7a5c3c;
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 4s steps(40, end), blink .75s step-end infinite;
     }
     .typing {
-  animation: typing 4s steps(40, end), blink .75s step-end infinite;
-}
+      animation: typing 4s steps(40, end), blink .75s step-end infinite;
+    }
+
     @keyframes typing {
       from { width: 0 }
       to { width: 80% }
@@ -119,21 +119,17 @@
       margin-top: 20px;
       animation: fadeIn 2s ease forwards;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
 
     #photo {
-      display: none;
+      display: block;
       margin-top: 20px;
       max-width: 80%;
       height: auto;
-      animation: popIn 1s ease-out forwards;
     }
-    @keyframes popIn {
-      0% { transform: scale(0); }
-      100% { transform: scale(1); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -147,8 +143,7 @@
   </div>
   <h1>宜潔 Happy Birthday!</h1>
   <div id="message">宜潔從大一到現在真的非常感謝你在課業上的幫助，然後很抱歉一直只記得你是6月生日，</div>
-  <p>
-  <div id="message2">還是問了林釔岑才知道已經過了(哭)，只能用這種方式作小小的補償啦</div>
+  <div id="message2">還是問了林釔岑才知道已經過了(哭)，只能用這種方式作小小的驚喜啦</div>
 
   <div class="cake" id="cake">
     <div class="candle" style="left: 30px;"><div class="flame"></div></div>
@@ -156,11 +151,22 @@
     <div class="candle" style="left: 110px;"><div class="flame"></div></div>
   </div>
 
-  <div id="wish">🎉 生日快樂 祝大四入班順利 🎉
-  <center><img src="HBD.png" " width="300" height="200" id="photo" alt="生日照片"></center>
+  <div id="wish">
+    🎉 生日快樂 祝大四入班順利 🎉<br/>
+    <img src="HBD.png" width="300" height="200" id="photo" alt="生日照片">
   </div>
-    
+
   <script>
+    // 延遲出現第二段訊息
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const msg2 = document.getElementById('message2');
+        msg2.style.display = 'block';
+        msg2.classList.add('typing');
+      }, 4000); // 在第一段打完後開始打第二段
+    });
+
+    // 蠟燭吹完才出現祝福和圖片
     const candles = document.querySelectorAll('.candle');
     let blown = 0;
 
@@ -170,19 +176,13 @@
           candle.classList.add('hidden-flame');
           blown++;
           if (blown === candles.length) {
-            document.getElementById('wish').style.display = 'block';
-            document.getElementById('photo').style.display = 'block';
+            const wish = document.getElementById('wish');
+            wish.style.display = 'block';
+            wish.style.animation = 'fadeIn 2s ease forwards';
           }
         }
       });
     });
-    window.addEventListener('load', () => {
-    setTimeout(() => {
-      const msg2 = document.getElementById('message2');
-      msg2.style.display = 'block';
-      msg2.classList.add('typing');
-    }, 4000); 
-  });
   </script>
 </body>
 </html>
