@@ -132,7 +132,7 @@
     <div class="balloon" style="left: 90%; animation-delay: 3s;"></div>
   </div>
   <h1>Happy Birthday, xxx!</h1>
-  <div id="message">祝你暑假過得愉快，大四入班順利～</div>
+  <div id="message">宜潔從大一到現在真的非常感謝你在課業上的幫助，然後很抱歉一直只記得你是6月生日，還是問了林釔岑才知道已經過了(哭)，只能用這種方式作小小的補償啦</div>
 
   <div class="cake" id="cake">
     <div class="candle" style="left: 30px;"><div class="flame"></div></div>
@@ -140,7 +140,7 @@
     <div class="candle" style="left: 110px;"><div class="flame"></div></div>
   </div>
 
-  <div id="wish">🎉 願望成真！生日快樂 🎉</div>
+  <div id="wish">🎉 生日快樂 祝大四入班順利 🎉</div>
   <img src="HBD.png" id="photo" alt="生日照片">
 
   <script>
